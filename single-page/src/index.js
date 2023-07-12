@@ -6,8 +6,8 @@ import './index.css'
 class Square extends React.Component {
     render() {
         return (
-            <button className="square">  
-        {this.props.value}
+            <button className="square" onClick={() =>alert('Olha só, você clicou utilizando uma Arrow Function!')}> 
+                {this.props.value}
             </button>
         );
     }
