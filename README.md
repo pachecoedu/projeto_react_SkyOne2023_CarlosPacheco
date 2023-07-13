@@ -10,7 +10,7 @@
   <tr>
     <td>HTML5</td>
     <td>CSS3</td>
-    <td>Javascript</td>
+    <td>JavaScript</td>
     <td>React.js</td>
   </tr>
 </table>
