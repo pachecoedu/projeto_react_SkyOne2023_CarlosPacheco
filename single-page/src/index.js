@@ -2,9 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Renderiza um quadrado no tabuleiro
+class Titulo extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Tic tac toe</h1>
+            </div>
+        );
+    }
+}
+
 function Square(props) {
-    // Retorna um botão com o valor e a função de clique fornecidos como props
     return (
         <button className="square" onClick={props.onClick}>
             {props.value}
@@ -21,7 +29,7 @@ class Board extends React.Component {
             />
         );
     }
-
+    // Renderiza um tabuleiro
     render() {
         return (
             <div>
@@ -49,13 +57,12 @@ class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            history: [
-                {
-                    squares: Array(9).fill(null),
-                },
-            ],
-            stepNumber: 0,
+            history: [{
+                squares: Array(9).fill(null),
+            }],
             xIsNext: true,
+            stepNumber: 0,
+            isDraw: false,
         };
     }
 
@@ -75,12 +82,9 @@ class Game extends React.Component {
             }]),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
-        });
-        if (squares.every(square => square !== null) && !calculateWinner(squares)) {    // 
-            this.setState({ isDraw: true });                                            //   verifica se não existem 
-        } else {                                                                        //   ou campos vazios para resultar em empate
-            this.setState({ isDraw: false });                                           //
-        }
+            isDraw: squares.every(square => square !== null) && !calculateWinner(squares),// verifica se não existem campos vazios
+        });                                                                              //   ou "winner"  para resultar em empate
+
     }
 
     jumpTo(step) {
@@ -154,3 +158,4 @@ function calculateWinner(squares) {
 }
 
 ReactDOM.render(<Game />, document.getElementById('root'));
+ReactDOM.render(<Titulo />, document.getElementById('titulo'));
