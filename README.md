@@ -21,6 +21,6 @@
 + Abra seu git e execute a seguinte linha:
 + git clone --branch developer https://github.com/pachecoedu/projeto_react_SkyOne2023_CarlosPacheco.git <br>
 + Entre na pasta "single-page"<br>
-+ Execute "npm install" para instalar as dependências<br>
++ Execute "npm install" ou "npm init -y" para instalar as dependências<br>
 + Após terminar de baixar os arquivos execute "npm start"<br>
 
